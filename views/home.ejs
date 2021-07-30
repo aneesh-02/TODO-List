@@ -1,9 +1,31 @@
 <html>
     <head>
-        <title><%= title %></title>
+        <title><%= locals.title%></title>  <!--This is how we send data from ejs to js using <%= %>-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/home.css"> <!-- middleware already calls assests so address = relative to this folder now-->
+        <!-- our css file is added at the end -->
     </head>
 
     <body>
-        <h1>TODO List /  <%= title %></h1>
+        <h1 id="page-heading">
+            TODO-List App
+        </h1>
+
+        <div id="list-container">
+            <ul>
+                <% for(let i  of todo_list)
+                    {                           %>
+                        <li class = "task">
+                            <div class = "details">   
+                                <div><h3><%= i.name %></h3></div>
+                                <div><h4><%= i.date %></h4></div>
+                            </div>
+                          
+                        </li>
+                <%  }                               %>
+            </ul>
+        </div>
+
+
     </body>
 </html>
