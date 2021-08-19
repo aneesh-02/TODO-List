@@ -10,6 +10,6 @@ router.get("/",homeController.home);
 // for any further routes acess from here
 // router.use("/routerName", require("./routerFile"));
 
-router.use("/lists",require("./list"));  // works on localhost: 9000/lists/listPath 
+// router.use("/lists",require("./list"));  // works on localhost: 9000/lists/listPath 
 
 module.exports = router;
