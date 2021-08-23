@@ -2,8 +2,8 @@
 
 <head>
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
-    <link rel="stylesheet" >
-    
+    <link rel="stylesheet">
+
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,15 +14,73 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- Title, Logo & CSS -->
-    <title> <%= locals.title%></title>                  <!--This is how we send data from ejs to js using <%= %>-->
+    <title>
+        <%= locals.title%>
+    </title>
+    <!--This is how we send data from ejs to js using <%= %>-->
     <link rel="icon" type="image/x-icon" href="">
-    <link rel="stylesheet" href="/css/home.css">            <!-- our CSS file is added at the end -->
+    <link rel="stylesheet" href="/style.css"> <!-- our CSS file is added at the end -->
     <!-- middleware already calls assests so address = relative to this folder now -->
 
 </head>
 
 <body>
-    HOME PAGE !! 
+    <!-- HEADING -->
+    <figure class="text-center heading">
+        <h1 class="display-3">TODO LIST APP</h1>
+    </figure>
+
+    <!-- INPUT CONATINER -->
+    <div class="container mt-4 px-5 py-1">
+
+        <!-- Description Box -->
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <!-- Category -->
+        <div class="mb-3">
+            <label for="exampleDataList" class="form-label">Category</label>
+            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Choose a Category">
+            <datalist id="datalistOptions">
+                <option value="Personal">
+                <option value="Work">
+                <option value="School">
+                <option value="Shopping">
+                <option value="Miscellaneous">
+            </datalist>
+        </div>
+
+        <!-- Due date -->
+        <div class="mb-3">
+            <label for="exampleDate" class="form-label">Due Date</label>
+            <form class="d-flex">
+                <input class="form-control " type="date" id="dateTimeSlot" name="date">
+            </form>
+            <br>
+        </div>
+
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="text-center container mt-4 px-5 py-1">
+        <button type="button" class="btn btn-success btn-lg">ADD TASK</button>
+        <button type="button" class="btn btn-danger btn-lg">DELETE TASK</button>
+    </div>
+
+    <!-- LIST -->
+    <div class="list text-center container mt-4 px-5 my-2 py-1">
+        <h1 class="display-5">TASKS LIST</h1>
+
+        <ul type="none" class="listItem">
+            <li> AA</li>
+            <li> BB</li>
+            <li> CC</li>
+            <li> DD</li>
+        </ul>
+    </div>
+
 </body>
 
 </html>
